@@ -55,4 +55,9 @@ def heap_sort(T):
         T[0], T[i] = T[i], T[0]
         heapify(T, i, 0)
 
-    return        
+    return
+
+T = [1,2,3,4,5,6,7]
+
+heap_sort(T)
+print(T)

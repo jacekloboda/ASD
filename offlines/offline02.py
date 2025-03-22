@@ -1,15 +1,16 @@
-# funkcja inv_cnt zwraca liczbe inwersji w liscie T, oblicza te liczbe za pomoca zmodyfikowanego algorytmu mergesort
+# Jacek Loboda
+# funkcja count_inveriosns zwraca liczbe inwersji w tablicy T robi to za pomoca algorytmu mergesort, podczas laczenia dwoch posortowanych tablic w mergesort gdy element z prawej tablicy jest mniejszy od tego z lewej to element z prawej jest w inwersji ze wszystkimi elementami ktore zostaly na lewej tablicy, zlozonosc czasowa: O(nlogn), zlozonosc pamieciowa: O(n)
 
-def inv_cnt(T):
+def count_inversions(T):
 
     def merge(T, l, r):
 
         nonlocal cnt  # licznik inwersji
         nonlocal B
         B[l:r+1] = T[l:r+1]
-        a = l  # iterator po pierwszej polowie scalanego B
+        a = l  # iterator po lewej polowie scalanego B
         mid = (l+r)//2
-        b = mid+1  # iterator po drugiej polowie scalanego B
+        b = mid+1  # iterator po prawej polowie scalanego B
         i = l  # iterator po liscie T
 
         while a <= mid and b <= r:
@@ -63,8 +64,3 @@ def inv_cnt(T):
     divide(T, 0, n-1)  # uruchamiam mergesort
 
     return cnt
-
-
-T = [1, 20, 6, 4, 5]
-
-print(inv_cnt(T))
