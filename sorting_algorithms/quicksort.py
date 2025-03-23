@@ -1,3 +1,5 @@
+# implemenation of quicksort
+
 def quick_sort(T):
 
     def partition_lomuto(T, l, r):
@@ -41,8 +43,8 @@ def quick_sort(T):
 
         if l < r:
 
-            # p = partition_lomuto(T, l, r)
-            p = partition_hoar(T, l, r)
+            p = partition_lomuto(T, l, r)
+            # p = partition_hoar(T, l, r)
             sort(T, l, p-1)
             sort(T, p+1, r)
 
@@ -52,8 +54,3 @@ def quick_sort(T):
     sort(T, 0, n-1)
 
     return
-
-
-T = [9, 3, 6, 2, 5, 7, 1, 4, 8]
-quick_sort(T)
-print(T)
