@@ -1,3 +1,6 @@
+# quicker_sort algorithm implementaion
+# works quicker when there are many identical values ex. T=[1,2,3,1,2,3,1,2,3,1,2,3,1,2,3], time complex: O(loglogn),
+
 def quicker_sort(T):
 
     def median(ia, ib, ic):
